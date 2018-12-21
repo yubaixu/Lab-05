@@ -21,11 +21,21 @@ window.onload=function(){
     const getColor=theForm.querySelector("input[type=color]");
     const theColorValue=document.getElementById("the-value");
     theColorValue.style.backgroundColor=getColor.value;
+    
     function setColor(){
         theColorValue.style.color=getColor.value;
     }
 
     theForm.addEventListener("change",setColor);
 
-
+    // RANGE SELECTION
+    const getRange=theForm.querySelector("input[type=range]");
+    
+    function rangeAction(){
+        var val=getRange.value;
+        theColorValue.innerHTML=val;
+        theColorValue.style.width=val+"%";
+    }
+    
+    getRange.addEventListener("change",rangeAction);
 }
